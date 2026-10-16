@@ -1,0 +1,587 @@
+/* ╔══════════════════════════════════════════════════════════════════╗
+   ║  ESTILOS DEL PORTAFOLIO  (solo los usa portafolio.html)          ║
+   ╠══════════════════════════════════════════════════════════════════╣
+   ║  Este archivo se carga DESPUÉS de los estilos generales del      ║
+   ║  sitio (ones-fresh-site-d9b1c2.webflow.css), así que reutiliza   ║
+   ║  sus colores y fuentes y solo agrega lo propio del portafolio.   ║
+   ║                                                                  ║
+   ║  Todas las clases nuevas empiezan con "pf-" (de PortaFolio)      ║
+   ║  para no chocar con las clases de Webflow.                       ║
+   ║                                                                  ║
+   ║  COLORES DEL SITIO (vienen como variables del CSS general)       ║
+   ║    var(--black)     #000004  negro del fondo                     ║
+   ║    var(--whiteone)  #fbfdf8  blanco hueso del texto              ║
+   ║    var(--secondary) #1c1c1c  gris oscuro de las tarjetas         ║
+   ║    var(--border-radius) 24px  esquinas redondeadas               ║
+   ║                                                                  ║
+   ║  FUENTES                                                         ║
+   ║    Cocogoose → títulos finos (clase .caps del sitio)             ║
+   ║    Satoshi   → etiquetas y botones                               ║
+   ║    Inter     → texto normal                                      ║
+   ║                                                                  ║
+   ║  MEDIDAS: como el resto del sitio, en computadora casi todo se   ║
+   ║  mide en "vw" (1vw = 1% del ancho de la pantalla), así el diseño ║
+   ║  crece o se achica con la ventana. En tablet y celular se pasa   ║
+   ║  a "rem" para que el texto no quede diminuto.                    ║
+   ║                                                                  ║
+   ║  ÍNDICE                                                          ║
+   ║    1. Encabezado (hero)                                          ║
+   ║    2. Filtros y contador                                         ║
+   ║    3. Mosaico de tarjetas                                        ║
+   ║    4. Tarjeta de proyecto                                        ║
+   ║    5. Visor de proyecto                                          ║
+   ║    6. Tablet (pantallas de 991px o menos)                        ║
+   ║    7. Celular (pantallas de 767px o menos)                       ║
+   ║    8. Accesibilidad: sin animaciones                             ║
+   ╚══════════════════════════════════════════════════════════════════╝ */
+
+
+/* ==================================================================
+   1. ENCABEZADO (HERO)
+   El encabezado usa las clases del inicio (.hero-section, .hero-text).
+   Aquí solo se ajusta: un poco menos alto que el del inicio y letra
+   un poco más chica, porque "Portafolio" es más largo que "One Idea".
+   ================================================================== */
+
+/* alto del encabezado (85% del alto de la pantalla) */
+.pf-hero .hero-wrapper {
+  height: 85vh;
+}
+
+/* tamaño de la palabra "Portafolio" */
+.pf-hero .hero-text {
+  font-size: 12.5vw;
+  line-height: 10vw;
+}
+
+/* frase debajo del título */
+.pf-hero-sub {
+  max-width: 34vw;
+  margin-top: 1.5vw;
+  color: var(--black);
+  text-align: center;
+}
+
+
+/* ==================================================================
+   2. FILTROS Y CONTADOR
+   La barra con los botones "Todos / Branding / Impresión..." y el
+   texto "18 proyectos". Los botones tienen forma de píldora con
+   borde; el botón activo se rellena de blanco hueso.
+   ================================================================== */
+
+/* barra completa: filtros a la izquierda, contador a la derecha */
+.pf-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 80vw;
+  margin: 0 auto 3.3vw;
+}
+
+/* grupo de botones */
+.pf-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7vw;
+}
+
+/* botón de filtro (normal) */
+.pf-filter {
+  font-family: Satoshi, Verdana, sans-serif;
+  font-size: .89vw;
+  font-weight: 400;
+  letter-spacing: .14vw;
+  text-transform: uppercase;
+  color: var(--whiteone);
+  background: transparent;
+  border: 1px solid rgba(251, 253, 248, .35);
+  border-radius: var(--border-radius);
+  padding: .7vw 1.4vw;
+  cursor: pointer;
+  transition: background-color .25s, color .25s, border-color .25s;
+}
+
+/* botón de filtro al pasar el mouse */
+.pf-filter:hover {
+  border-color: var(--whiteone);
+}
+
+/* botón de filtro seleccionado (la clase la pone portafolio.js) */
+.pf-filter.is-active {
+  background: var(--whiteone);
+  border-color: var(--whiteone);
+  color: var(--black);
+}
+
+/* texto "18 proyectos" */
+.pf-count {
+  color: rgba(251, 253, 248, .55);
+}
+
+
+/* ==================================================================
+   3. MOSAICO DE TARJETAS
+   Las tarjetas se acomodan en columnas, como en Pinterest: cada
+   imagen conserva su forma (vertical, horizontal o cuadrada) y no
+   se recorta. 3 columnas en computadora, 2 en tablet, 1 en celular.
+   ================================================================== */
+
+.pf-grid {
+  width: 80vw;
+  margin: 0 auto;
+  column-count: 3;   /* número de columnas */
+  column-gap: 2.2vw; /* espacio entre columnas */
+}
+
+/* mensaje cuando un filtro no tiene trabajos */
+.pf-empty {
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(251, 253, 248, .55);
+}
+
+
+/* ==================================================================
+   4. TARJETA DE PROYECTO
+   Cada trabajo del mosaico. Se compone de:
+     .pf-card          → la tarjeta completa
+     .pf-card-link     → todo es un botón que abre el visor
+     .pf-card-image    → la imagen con esquinas redondeadas
+     .pf-card-view     → círculo "VER" que aparece con el mouse
+     .pf-card-count    → etiqueta "29 imágenes" (si tiene varias)
+     .pf-card-text     → título + etiquetas de abajo
+   ================================================================== */
+
+/* --- tarjeta y animación de entrada ---
+   Empieza invisible y 40px más abajo. Cuando aparece en pantalla,
+   portafolio.js le agrega "is-visible" y sube suavemente. */
+.pf-card {
+  break-inside: avoid; /* que una tarjeta no se parta entre dos columnas */
+  margin-bottom: 3.3vw;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.pf-card.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* tarjetas ocultas por un filtro */
+.pf-card[hidden] {
+  display: none;
+}
+
+/* --- botón que envuelve toda la tarjeta (se le quita el aspecto de botón) --- */
+.pf-card-link {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* --- imagen --- */
+.pf-card-image {
+  position: relative;
+  overflow: hidden; /* para que el zoom no se salga de las esquinas redondeadas */
+  border-radius: var(--border-radius);
+  background: var(--secondary); /* color mientras carga la imagen */
+}
+
+.pf-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .8s cubic-bezier(.2, .7, .2, 1), filter .4s;
+}
+
+/* imágenes muy horizontales (como las lonas) se recortan a 16:9
+   en la tarjeta; en el visor se ven completas. Se activa con
+   "ancha: true" en la lista de portafolio.js */
+.pf-card-image.is-wide img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* al pasar el mouse: la imagen se acerca un poco y se oscurece */
+.pf-card-link:hover .pf-card-image img,
+.pf-card-link:focus-visible .pf-card-image img {
+  transform: scale(1.05);
+  filter: brightness(.75);
+}
+
+/* --- círculo "VER" ---
+   Mismo estilo que el círculo de la sección de trabajos del inicio.
+   Está escondido (scale 0) y crece al pasar el mouse. */
+.pf-card-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.67vw;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background: var(--black);
+  color: var(--whiteone);
+  font-family: Satoshi, Verdana, sans-serif;
+  font-size: .89vw;
+  font-weight: 900;
+  letter-spacing: .14vw;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+}
+
+.pf-card-link:hover .pf-card-view,
+.pf-card-link:focus-visible .pf-card-view {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* --- etiqueta "29 imágenes" en la esquina superior derecha --- */
+.pf-card-count {
+  position: absolute;
+  top: 1.1vw;
+  right: 1.1vw;
+  padding: .3vw .8vw;
+  border-radius: var(--border-radius);
+  background: rgba(0, 0, 4, .7);
+  backdrop-filter: blur(8px);
+  color: var(--whiteone);
+  font-family: Satoshi, Verdana, sans-serif;
+  font-size: .78vw;
+  letter-spacing: .1vw;
+}
+
+/* --- texto debajo de la imagen --- */
+.pf-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: .8vw;
+  padding: 1.4vw .4vw 0;
+}
+
+/* título (usa también la clase .caps del sitio: Cocogoose en mayúsculas) */
+.pf-card-title {
+  font-size: 1.9vw;
+  line-height: 2.3vw;
+}
+
+/* etiquetas (píldoras). Usan la clase .works-badge del sitio:
+   la primera va rellena (tipo de trabajo) y las demás solo con
+   borde (.is-outline, las categorías) */
+.pf-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6vw;
+}
+
+.pf-card-badges .works-badge {
+  height: auto;
+  padding: .3vw 1vw;
+}
+
+.pf-card-badges .works-badge.is-outline {
+  background: transparent;
+  border: 1px solid rgba(251, 253, 248, .35);
+  color: var(--whiteone);
+}
+
+
+/* ==================================================================
+   5. VISOR DE PROYECTO
+   La ventana que cubre toda la pantalla al hacer clic en un trabajo.
+   En computadora se divide en dos columnas:
+     izquierda (.pf-lb-stage) → imagen grande, flechas y miniaturas
+     derecha   (.pf-lb-info)  → panel de 340px con la información
+   Está escondido (opacity 0 / visibility hidden) hasta que
+   portafolio.js le agrega la clase "is-open".
+   ================================================================== */
+
+/* --- fondo y estructura --- */
+.pf-lightbox {
+  position: fixed;
+  inset: 0;          /* ocupa toda la pantalla */
+  z-index: 9999;     /* por encima de todo, incluido el menú */
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 340px);
+  background: rgba(0, 0, 4, .98);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s, visibility .35s;
+}
+
+.pf-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* mientras el visor está abierto, la página de atrás no se mueve */
+body.pf-no-scroll {
+  overflow: hidden;
+}
+
+/* --- zona de la imagen --- */
+.pf-lb-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding: 2.2vw;
+}
+
+.pf-lb-figure {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  margin: 0;
+}
+
+/* la imagen se ve completa, sin recortes, del tamaño que quepa */
+.pf-lb-figure img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+  transition: opacity .25s;
+}
+
+/* se desvanece mientras carga la siguiente imagen */
+.pf-lb-figure img.is-loading {
+  opacity: 0;
+}
+
+/* --- tira de miniaturas (solo proyectos con varias imágenes) --- */
+.pf-lb-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto; /* si no caben, se desliza de lado */
+  padding-top: 1.4vw;
+  scrollbar-width: thin;
+  scrollbar-color: #404040 transparent;
+}
+
+.pf-lb-thumbs[hidden] {
+  display: none;
+}
+
+.pf-lb-thumb {
+  flex: 0 0 auto;
+  width: 96px;
+  height: 64px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--secondary);
+  opacity: .45;
+  cursor: pointer;
+  transition: opacity .2s, border-color .2s;
+}
+
+.pf-lb-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pf-lb-thumb:hover {
+  opacity: .8;
+}
+
+/* miniatura de la imagen que se está viendo */
+.pf-lb-thumb.is-active {
+  border-color: var(--whiteone);
+  opacity: 1;
+}
+
+/* --- panel de información (derecha) --- */
+.pf-lb-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 5.5rem 2rem 2rem;
+  border-left: 1px solid #1c1c1c;
+  overflow-y: auto;
+}
+
+/* tipo de trabajo (texto chico gris arriba del título) */
+.pf-lb-info h5 {
+  color: rgba(251, 253, 248, .55);
+}
+
+.pf-lb-title {
+  font-size: 1.9rem;
+  line-height: 2.3rem;
+}
+
+.pf-lb-desc {
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+/* contador "03 / 29", pegado abajo del panel */
+.pf-lb-counter {
+  margin-top: auto;
+  font-family: Satoshi, Verdana, sans-serif;
+  letter-spacing: .14em;
+}
+
+/* --- botones redondos (cerrar, anterior, siguiente) --- */
+.pf-lb-btn {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 1px solid rgba(251, 253, 248, .35);
+  border-radius: 100%;
+  background: rgba(0, 0, 4, .6);
+  backdrop-filter: blur(8px);
+  color: var(--whiteone);
+  cursor: pointer;
+  transition: background-color .25s, border-color .25s;
+}
+
+/* al pasar el mouse se rellenan de blanco */
+.pf-lb-btn:hover {
+  background: var(--whiteone);
+  border-color: var(--whiteone);
+}
+
+/* la flecha del sitio es negra: se invierte a blanca */
+.pf-lb-btn img {
+  width: 22px;
+  height: 22px;
+  filter: invert(1);
+  transition: filter .25s;
+}
+
+.pf-lb-btn:hover img {
+  filter: none;
+}
+
+/* botón X (arriba a la derecha) */
+.pf-lb-close {
+  top: 1.4rem;
+  right: 1.4rem;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.pf-lb-close:hover {
+  color: var(--black);
+}
+
+/* flechas a los lados de la imagen, centradas en vertical */
+.pf-lb-prev,
+.pf-lb-next {
+  top: 50%;
+  margin-top: -26px;
+}
+
+.pf-lb-prev { left: 1.4rem; }
+.pf-lb-next { right: 1.4rem; }
+
+/* la flecha del sitio (arrow_outward.svg) apunta en diagonal ↗;
+   se gira para que apunte a la izquierda o a la derecha */
+.pf-lb-prev img { transform: rotate(-135deg); }
+.pf-lb-next img { transform: rotate(45deg); }
+
+/* en proyectos de una sola imagen las flechas se esconden */
+.pf-lb-prev[hidden],
+.pf-lb-next[hidden] {
+  display: none;
+}
+
+
+/* ==================================================================
+   6. TABLET (pantallas de 991px o menos)
+   - Medidas en rem en lugar de vw para que el texto se lea bien.
+   - Mosaico de 2 columnas.
+   - En el visor, el panel de información pasa abajo de la imagen.
+   ================================================================== */
+@media screen and (max-width: 991px) {
+  /* encabezado */
+  .pf-hero .hero-wrapper { height: 70vh; }
+  .pf-hero-sub { max-width: 60vw; font-size: 1rem; line-height: 1.6rem; }
+
+  /* anchos */
+  .pf-toolbar,
+  .pf-grid,
+  .pf-empty { width: 90vw; }
+
+  /* filtros */
+  .pf-filters { gap: 8px; }
+  .pf-filter { font-size: .75rem; padding: .55rem 1rem; }
+
+  /* mosaico y tarjetas */
+  .pf-grid { column-count: 2; column-gap: 1.5rem; }
+  .pf-card { margin-bottom: 2.5rem; }
+  .pf-card-view { width: 5.5rem; font-size: .75rem; }
+  .pf-card-count { top: .8rem; right: .8rem; padding: .25rem .7rem; font-size: .7rem; }
+  .pf-card-text { gap: .6rem; padding-top: 1rem; }
+  .pf-card-title { font-size: 1.5rem; line-height: 1.9rem; }
+  .pf-card-badges { gap: 6px; }
+  .pf-card-badges .works-badge { padding: .3rem .8rem; }
+
+  /* visor: imagen arriba, información abajo */
+  .pf-lightbox { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
+  .pf-lb-stage { padding: 4.5rem 1rem 0; }
+  .pf-lb-info { padding: 1.2rem 1.25rem 1.5rem; border-left: 0; border-top: 1px solid #1c1c1c; max-height: 34vh; gap: .6rem; }
+  .pf-lb-title { font-size: 1.4rem; line-height: 1.8rem; }
+  .pf-lb-desc { font-size: .9rem; line-height: 1.4rem; }
+  .pf-lb-counter { margin-top: 0; }
+}
+
+
+/* ==================================================================
+   7. CELULAR (pantallas de 767px o menos)
+   - Mosaico de 1 columna.
+   - Se quita el círculo "VER" (en celular no hay mouse).
+   - Botones del visor un poco más chicos.
+   ================================================================== */
+@media screen and (max-width: 767px) {
+  /* encabezado */
+  .pf-hero .hero-wrapper { height: 75vh; }
+  .pf-hero .hero-text { font-size: 16vw; line-height: 14vw; }
+  .pf-hero-sub { max-width: 85vw; }
+
+  /* mosaico */
+  .pf-grid { column-count: 1; }
+  .pf-card-view { display: none; }
+
+  /* visor */
+  .pf-lb-btn { width: 44px; height: 44px; }
+  .pf-lb-prev, .pf-lb-next { margin-top: -22px; }
+  .pf-lb-prev { left: .5rem; }
+  .pf-lb-next { right: .5rem; }
+  .pf-lb-thumb { width: 72px; height: 48px; }
+}
+
+
+/* ==================================================================
+   8. ACCESIBILIDAD: SIN ANIMACIONES
+   Si la persona activó "reducir movimiento" en su celular o
+   computadora, se quitan las animaciones y todo aparece de una vez.
+   ================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .pf-card { opacity: 1; transform: none; transition: none; }
+  .pf-card-image img, .pf-card-view, .pf-lightbox { transition: none; }
+}
