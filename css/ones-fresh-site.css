@@ -2237,7 +2237,6 @@ blockquote {
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
     flex-flow: column;
-    justify-content: flex-end;
     align-items: center;
     width: 41rem;
     height: 40vh;

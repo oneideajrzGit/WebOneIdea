@@ -56,7 +56,7 @@
   <!-- Estilos generales del sitio (los mismos de todas las páginas) -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/webflow.css">
-  <link rel="stylesheet" href="css/ones-fresh-site-d9b1c2.webflow.css">
+  <link rel="stylesheet" href="css/ones-fresh-site.css">
   <!-- Estilos que solo usa esta página -->
   <link rel="stylesheet" href="css/portafolio.css">
 
@@ -92,27 +92,30 @@
     </a>
 
     <div class="nav-container w-container">
-      <!-- Enlaces del menú -->
+      <!-- cada enlace va duplicado: el segundo es el texto que sube en la animación hover -->
       <nav role="navigation" class="nav-menu w-nav-menu">
         <div class="nav-link-wrapper">
-          <a href="index.html" class="nav-link w-nav-link">INICIO</a>
-          <a href="index.html" class="nav-link move-down hide-on-tab w-nav-link">Home</a>
+          <a href="index.html" aria-current="page" class="nav-link w-nav-link w--current">INICIO</a>
+          <a href="index.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current">Home</a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="about.html" class="nav-link w-nav-link">SOBRE NOSOTROS</a>
-          <a href="about.html" class="nav-link move-down hide-on-tab w-nav-link">About</a>
+          <a href="servicios.html" class="nav-link w-nav-link">Servicios</a>
+          <a href="servicios.html" class="nav-link move-down hide-on-tab w-nav-link">Services</a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="portafolio.html" aria-current="page" class="nav-link w-nav-link w--current">PORTAFOLIO</a>
-          <a href="portafolio.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current">Portfolio</a>
+          <a href="portafolio.html" class="nav-link w-nav-link">PORTAFOLIO</a>
+          <a href="portafolio.html" class="nav-link move-down hide-on-tab w-nav-link">Portfolio</a>
         </div>
         <div class="nav-link-wrapper">
           <a href="contact.html" class="nav-link w-nav-link">ContactO</a>
           <a href="contact.html" class="nav-link move-down hide-on-tab w-nav-link">Contact</a>
         </div>
+        <div class="nav-link-wrapper">
+          <a href="about.html" class="nav-link w-nav-link"> NOSOTROS</a>
+          <a href="about.html" class="nav-link move-down hide-on-tab w-nav-link">About Us</a>
+        </div>
       </nav>
 
-      <!-- Botón de hamburguesa (solo aparece en celular y tablet) -->
       <div class="menu-button w-nav-button">
         <div class="burger-icon w-icon-nav-menu"></div>
       </div>

@@ -1,35 +1,4 @@
 <!DOCTYPE html>
-<!--
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║  PORTAFOLIO — One Idea                                           ║
-  ╠══════════════════════════════════════════════════════════════════╣
-  ║  Esta página muestra los trabajos de One Idea en un mosaico      ║
-  ║  que se puede filtrar por categoría. Al hacer clic en un         ║
-  ║  trabajo se abre en grande (el "visor").                         ║
-  ║                                                                  ║
-  ║  La página usa 3 archivos propios:                               ║
-  ║    · portafolio.html     → la estructura (este archivo)          ║
-  ║    · css/portafolio.css  → los estilos (colores, tamaños...)     ║
-  ║    · js/portafolio.js    → la lista de trabajos y lo interactivo ║
-  ║                                                                  ║
-  ║  ¿Quieres agregar o cambiar un trabajo? NO se hace aquí:         ║
-  ║  se hace en la lista PROYECTOS de js/portafolio.js.              ║
-  ║                                                                  ║
-  ║  ÍNDICE DE SECCIONES                                             ║
-  ║    0. <head>: configuración de la página                         ║
-  ║    1. Menú                                                       ║
-  ║    2. Encabezado (hero)                                          ║
-  ║    3. Proyectos: filtros + mosaico                               ║
-  ║    4. Llamada a la acción                                        ║
-  ║    5. Pie de página                                              ║
-  ║    6. Visor de proyecto (ventana que se abre al hacer clic)      ║
-  ║    7. Scripts                                                    ║
-  ╚══════════════════════════════════════════════════════════════════╝
-
-  NOTA: el sitio se exportó de Webflow. Los atributos que empiezan con
-  data-wf-* y data-w-id los usa js/webflow.js para las animaciones del
-  menú, la llamada a la acción y el pie de página: no los borres.
--->
 <html data-wf-page="6a6cdb69a8b3730ea3b1e111" data-wf-site="6a6cdb66a8b3730ea3b1e0b8" lang="es">
 
 <!-- ================================================================
@@ -56,7 +25,7 @@
   <!-- Estilos generales del sitio (los mismos de todas las páginas) -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/webflow.css">
-  <link rel="stylesheet" href="css/ones-fresh-site-d9b1c2.webflow.css">
+  <link rel="stylesheet" href="css/ones-fresh-site.css">
   <!-- Estilos que solo usa esta página -->
   <link rel="stylesheet" href="css/portafolio.css">
 
@@ -92,27 +61,30 @@
     </a>
 
     <div class="nav-container w-container">
-      <!-- Enlaces del menú -->
+      <!-- cada enlace va duplicado: el segundo es el texto que sube en la animación hover -->
       <nav role="navigation" class="nav-menu w-nav-menu">
         <div class="nav-link-wrapper">
-          <a href="index.html" class="nav-link w-nav-link">INICIO</a>
-          <a href="index.html" class="nav-link move-down hide-on-tab w-nav-link">Home</a>
+          <a href="index.html" aria-current="page" class="nav-link w-nav-link w--current">INICIO</a>
+          <a href="index.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current">Home</a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="about.html" class="nav-link w-nav-link">SOBRE NOSOTROS</a>
-          <a href="about.html" class="nav-link move-down hide-on-tab w-nav-link">About</a>
+          <a href="servicios.html" class="nav-link w-nav-link">Servicios</a>
+          <a href="servicios.html" class="nav-link move-down hide-on-tab w-nav-link">Services</a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="portafolio.html" aria-current="page" class="nav-link w-nav-link w--current">PORTAFOLIO</a>
-          <a href="portafolio.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current">Portfolio</a>
+          <a href="portafolio.html" class="nav-link w-nav-link">PORTAFOLIO</a>
+          <a href="portafolio.html" class="nav-link move-down hide-on-tab w-nav-link">Portfolio</a>
         </div>
         <div class="nav-link-wrapper">
           <a href="contact.html" class="nav-link w-nav-link">ContactO</a>
           <a href="contact.html" class="nav-link move-down hide-on-tab w-nav-link">Contact</a>
         </div>
+        <div class="nav-link-wrapper">
+          <a href="about.html" class="nav-link w-nav-link"> NOSOTROS</a>
+          <a href="about.html" class="nav-link move-down hide-on-tab w-nav-link">About Us</a>
+        </div>
       </nav>
 
-      <!-- Botón de hamburguesa (solo aparece en celular y tablet) -->
       <div class="menu-button w-nav-button">
         <div class="burger-icon w-icon-nav-menu"></div>
       </div>
@@ -134,7 +106,7 @@
     <div class="w-layout-blockcontainer container w-container">
       <div class="hero-wrapper">
         <h5 class="heading">Nuestro trabajo</h5>
-        <h1 class="hero-text">Portafolio</h1>
+        <h1 class="hero-text">Servicios</h1>
         <p class="pf-hero-sub">Cada proyecto empieza con una idea. Estas son algunas de las historias que hemos diseñado, impreso y estampado.</p>
       </div>
       <!-- Degradado de abajo que funde el blanco con el negro de la siguiente sección -->
@@ -154,21 +126,51 @@
        - #pf-grid    → el mosaico de tarjetas
        - #pf-empty   → mensaje que sale si un filtro no tiene trabajos
        ================================================================ -->
-  <section id="proyectos" class="section">
-    <div class="space-4rem"></div>
-
-    <!-- Barra superior: filtros a la izquierda, contador a la derecha -->
-    <div class="pf-toolbar">
-      <div id="pf-filters" class="pf-filters" role="group" aria-label="Filtrar por categoría"></div>
-      <h5 id="pf-count" class="pf-count" aria-live="polite"></h5>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="logo">KERIMOV</a>
     </div>
 
-    <!-- Mosaico de trabajos -->
-    <div id="pf-grid" class="pf-grid"></div>
-    <p id="pf-empty" class="pf-empty" hidden>Aún no hay proyectos en esta categoría.</p>
+    <nav class="sidebar-nav">
+      <ul class="nav-links">
+        <li><a href="#" class="active">Todos</a></li>
+        <li><a href="#">Arquitectura</a></li>
+        <li><a href="#">Interiorismo</a></li>
+        <li><a href="#">Conceptos</a></li>
+      </ul>
+    </nav>
 
-    <div class="space-7rem"></div>
-  </section>
+    <div class="sidebar-footer">
+      <a href="#about">Sobre nosotros</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </aside>
+
+  <!-- Galería de Proyectos (Área de Scroll) -->
+  <main class="main-content">
+    <section class="projects-grid">
+      <article class="project-card card-large">
+        <div class="image-wrapper">
+          <img src="proyecto1.jpg" alt="Villa Minimalista">
+        </div>
+        <div class="project-info">
+          <h3>Villa Minimalista</h3>
+          <p>2024 — Arquitectura</p>
+        </div>
+      </article>
+
+      <article class="project-card card-offset">
+        <div class="image-wrapper">
+          <img src="proyecto2.jpg" alt="Residencia en la Montaña">
+        </div>
+        <div class="project-info">
+          <h3>Residencia Montaña</h3>
+          <p>2024 — Interiorismo</p>
+        </div>
+      </article>
+    </section>
+  </main>
+</div>
 
 
   <!-- ================================================================
