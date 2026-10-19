@@ -60,7 +60,7 @@ var PROYECTOS = [
     tipo: 'Manual de identidad',
     categorias: ['Branding', 'Diseño gráfico'],
     descripcion: 'Identidad visual completa para la editorial Parousa Aletheia: logotipo y sus variaciones, tipografía, paleta de color, elementos gráficos, fotografía y aplicaciones de la marca.',
-    fotos: 29
+    fotos: 27
   },
   {
     slug: 'san-angel',
