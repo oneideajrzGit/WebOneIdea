@@ -1116,7 +1116,7 @@ textarea.w-select {
   color: #222222;
 }
 .w-dropdown-link.w--current {
-  color: #0082f3;
+  color: #e2a71b;
 }
 .w-dropdown-link:focus {
   outline: 0;
@@ -1596,7 +1596,7 @@ textarea.w-select {
   margin-right: auto;
 }
 .w-nav-link.w--current {
-  color: #0082f3;
+  color: #e2a71b;
 }
 .w-nav-menu {
   position: relative;
