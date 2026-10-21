@@ -65,24 +65,24 @@ var PROYECTOS = [
   {
     slug: 'san-angel',
     titulo: 'Café San Ángel',
-    tipo: 'Vinil para vitrina',
-    categorias: ['Impresión'],
+    tipo: 'Vinil de corte para ventanales',
+    categorias: ['Diseño gráfico', 'Corte', 'Instalación'],
     descripcion: 'Ilustraciones en vinil blanco para los ventanales de la cafetería, pensadas para verse desde la calle.',
-    fotos: 1
+    fotos: 2
   },
   {
     slug: 'happy-birthday',
     titulo: 'Happy Birthday Mario',
     tipo: 'Playera personalizada',
-    categorias: ['Estampado textil'],
+    categorias: ['Estampado textil', 'Serigrafía'],
     descripcion: 'Diseño y estampado de playera para celebración de cumpleaños.',
     fotos: 1
   },
   {
     slug: 'dogos-sonora',
     titulo: 'Dogos Estilo Sonora',
-    tipo: 'Post para redes',
-    categorias: ['Redes sociales'],
+    tipo: 'Vinil para carrito',
+    categorias: ['Diseño gráfico', 'Impresión'],
     descripcion: 'Publicación promocional con precio destacado para redes sociales.',
     fotos: 1
   },
@@ -98,14 +98,14 @@ var PROYECTOS = [
     slug: 'el-divo',
     titulo: 'El Divo',
     tipo: 'Colaboración · Playera',
-    categorias: ['Estampado textil'],
+    categorias: ['Estampado textil', 'Serigrafía'],
     descripcion: 'Playera de edición especial creada en colaboración.',
     fotos: 1
   },
   {
     slug: 'rincon-amado',
     titulo: 'Rincón Amado',
-    tipo: 'Lona de gran formato',
+    tipo: 'Lona',
     categorias: ['Impresión'],
     descripcion: 'Lona para cafetería con café, postres y bebidas.',
     fotos: 1
@@ -113,7 +113,7 @@ var PROYECTOS = [
   {
     slug: 'invitacion-boda',
     titulo: 'Invitación de boda',
-    tipo: 'Papelería',
+    tipo: 'Invitación',
     categorias: ['Diseño gráfico', 'Impresión'],
     descripcion: 'Invitación elegante con caligrafía y detalles de la ceremonia y la recepción.',
     fotos: 1
@@ -137,16 +137,16 @@ var PROYECTOS = [
   {
     slug: 'el-guayabo',
     titulo: 'El Guayabo',
-    tipo: 'Logotipo aplicado',
-    categorias: ['Branding'],
+    tipo: 'Corte láser en madera',
+    categorias: ['Instalación'],
     descripcion: 'Logotipo aplicado en la barra del negocio.',
     fotos: 1
   },
   {
     slug: 'panchitos',
     titulo: 'Panchitos Burritos',
-    tipo: 'Contenido digital',
-    categorias: ['Redes sociales'],
+    tipo: 'Menú Digital',
+    categorias: ['Diseño Digital'],
     descripcion: 'Contenido digital para la marca.',
     fotos: 1
   },
@@ -155,16 +155,8 @@ var PROYECTOS = [
     titulo: 'Hamburguesas & Hot-Dogs',
     tipo: 'Menú en vinil · 76 × 101 cm',
     categorias: ['Diseño gráfico', 'Impresión'],
-    descripcion: 'Menú de gran formato impreso en vinil para colocarse en el local.',
+    descripcion: 'Menú impreso en vinil para colocarse en camión de comida.',
     fotos: 1
-  },
-  {
-    slug: 'tarjetas-one-idea',
-    titulo: 'One Idea',
-    tipo: 'Tarjetas de presentación',
-    categorias: ['Branding', 'Impresión'],
-    descripcion: 'Nuestras propias tarjetas: frente y reverso.',
-    fotos: 2
   },
   {
     slug: 'bolsa-taqueria',
