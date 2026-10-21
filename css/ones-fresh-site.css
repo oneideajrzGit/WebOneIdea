@@ -908,6 +908,49 @@ blockquote {
   color: var(--black);
 }
 
+/* ---- Selector de idioma ES / EN (js/idioma.js) ---- */
+.lang-switch {
+  z-index: 999;
+  border: 1px solid rgba(245, 245, 245, .35);
+  border-radius: 999px;
+  align-items: center;
+  gap: .2vw;
+  margin-right: 1.4vw;
+  padding: .25vw .5vw;
+  display: flex;
+  position: relative;
+}
+
+.lang-option {
+  color: var(--whiteone);
+  opacity: .55;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  padding: .2vw .55vw;
+  font-family: Satoshi, Verdana, sans-serif;
+  font-size: .9vw;
+  font-weight: 300;
+  line-height: 1.4;
+  transition: opacity .25s, color .25s;
+}
+
+.lang-option:hover {
+  opacity: 1;
+}
+
+.lang-option.is-active {
+  color: #e2a71b;
+  opacity: 1;
+}
+
+.lang-divider {
+  color: var(--whiteone);
+  opacity: .35;
+  font-size: .9vw;
+}
+
 /* ---- Submenú de Servicios ----
    Vive FUERA de .nav-link-wrapper (que recorta con overflow:hidden). */
 .nav-item {
@@ -983,6 +1026,21 @@ blockquote {
   .burger-icon {
     color: var(--black-soft);
     font-size: 1.875rem;
+  }
+
+  .lang-switch {
+    gap: .25rem;
+    margin-right: .5rem;
+    padding: .25rem .5rem;
+  }
+
+  .lang-option {
+    padding: .25rem .5rem;
+    font-size: .9rem;
+  }
+
+  .lang-divider {
+    font-size: .9rem;
   }
 
   /* submenú siempre visible, en lista compacta bajo "Servicios" */
@@ -3033,6 +3091,30 @@ html.w-mod-js .catalog-panel.is-active {
   color: #aaa;
 }
 
+/* Menú desplegable de productos (formulario de contacto) */
+.select-field {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 2.6vw;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23171f33' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.1vw center;
+  background-size: 12px 8px;
+}
+
+.select-field:invalid {
+  color: #aaa;
+}
+
+.select-field option {
+  color: var(--black);
+}
+
+.field-optional {
+  opacity: .6;
+}
+
 .message-area {
   background-color: var(--whiteone);
   min-height: 7.8vw;
@@ -3107,6 +3189,11 @@ html.w-mod-js .catalog-panel.is-active {
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: .88rem;
+  }
+
+  .select-field {
+    padding-right: 2.5rem;
+    background-position: right 1rem center;
   }
 
   .message-area {
