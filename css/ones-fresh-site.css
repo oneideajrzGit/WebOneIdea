@@ -1024,7 +1024,7 @@ blockquote {
   }
 
   .burger-icon {
-    color: var(--black-soft);
+    color: #a0094d;
     font-size: 1.875rem;
   }
 
@@ -2238,16 +2238,8 @@ blockquote {
   line-height: 1.78vw;
 }
 
-.footer-link:hover {
-  color: var(--gray-100);
-}
-
 .footer-link.w--current {
   color: #000004;
-}
-
-.footer-link.move-down.w--current {
-  color: #eee;
 }
 
 .footer-wrapper {
