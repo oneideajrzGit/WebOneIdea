@@ -24,6 +24,6 @@ return [
     'destino'     => 'oneideajrz@morethanoneidea.com',
 
     // Datos que aparecen en el correo de confirmación al cliente
-    'whatsapp'    => '656 000 0000',
+    'whatsapp'    => '656 761 6161',
     'sitio_web'   => 'https://morethanoneidea.com',
 ];
