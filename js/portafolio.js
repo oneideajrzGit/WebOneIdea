@@ -92,7 +92,7 @@ var PROYECTOS = [
     tipo: 'Menú',
     categorias: ['Diseño gráfico', 'Impresión'],
     descripcion: 'Menú completo de restaurante: desayunos, tacos, tortas, antojitos, especiales de fin de semana y menú infantil.',
-    fotos: 1
+    fotos: 2
   },
   {
     slug: 'el-divo',
@@ -164,6 +164,14 @@ var PROYECTOS = [
     tipo: 'Bolsa de papel · Taquería 70',
     categorias: ['Branding', 'Impresión'],
     descripcion: 'Bolsa oficial de la taquería con su identidad impresa.',
+    fotos: 1
+  },
+  {
+    slug: 'bolsa-serigrafia',
+    titulo: 'Smalto',
+    tipo: 'Bolsa de papel · Serigrafía',
+    categorias: ['Branding', 'Impresión', 'Serigrafía'],
+    descripcion: 'Bolsas de papel blancas con el logotipo de la clínica dental Smalto impreso en serigrafía roja, con detalles navideños.',
     fotos: 1
   },
   {
