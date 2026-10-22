@@ -211,7 +211,7 @@ h5 {
   letter-spacing: .14vw;
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1vw;
   font-size: .89vw;
   font-weight: 400;
   line-height: 1.44vw;
@@ -390,8 +390,8 @@ blockquote {
 
 @media screen and (max-width: 479px) {
   h1 {
-    font-size: 3rem;
-    line-height: 3.5rem;
+    font-size: 5rem;
+    line-height: 5.5rem;
   }
 
   h2 {
@@ -699,10 +699,10 @@ blockquote {
 }
 
 .arrow {
-  min-width: .9vw;
-  max-width: .9vw;
-  min-height: .9vw;
-  max-height: .9vw;
+  min-width: 2vw;
+  max-width: 2vw;
+  min-height: 2vw;
+  max-height: 2vw;
 }
 
 .button-arrow-wrapper {
@@ -763,10 +763,10 @@ blockquote {
   border-radius: 100%;
   justify-content: center;
   align-items: center;
-  min-width: 2.8vw;
-  max-width: 2.8vw;
-  min-height: 2.8vw;
-  max-height: 2.8vw;
+  min-width: 4vw;
+  max-width: 4vw;
+  min-height: 4vw;
+  max-height: 4vw;
   display: flex;
   overflow: hidden;
 }
@@ -1105,7 +1105,7 @@ blockquote {
 .hero-text {
   text-transform: none;
   color: #000004;
-  font-family: Cocogoose Pro Trial, Verdana, sans-serif;
+  font-family: Cocogoose Pro Letterpress Trial, Verdana, sans-serif;
   font-size: 15.55vw;
   font-weight: 100;
   line-height: 11.44vw;
@@ -1202,7 +1202,7 @@ blockquote {
 @media screen and (max-width: 767px) {
   .hero-wrapper {
     width: 28.5rem;
-    height: 35vh;
+    height: 50vh;
   }
 
   .hero-text {
@@ -1223,7 +1223,7 @@ blockquote {
 @media screen and (max-width: 479px) {
   .hero-wrapper {
     width: 80vw;
-    height: 30vh;
+    height: 60vh;
   }
 
   .hero-text {
@@ -1279,6 +1279,7 @@ blockquote {
 }
 
 .oi-logo {
+  
   flex: 0 0 220px;
   justify-content: center;
   align-items: center;

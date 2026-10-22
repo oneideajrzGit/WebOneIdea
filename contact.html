@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/webflow.css">
   <link rel="stylesheet" href="css/ones-fresh-site.css">
-  <link rel="stylesheet" href="css/portafolio.css">
 
   <!-- Fuente Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,25 +37,41 @@
 </head>
 
 <body>
-  <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium"
-    data-w-id="06ab6c64-468c-b44e-1b8c-856deb96ba7f" role="banner" data-no-scroll="1" data-duration="400"
-    data-doc-height="1">
-    <a href="index.html" class="logo-link-wrapper w-nav-brand"><img width="Auto" height="Auto" alt=""
-        src="images/logoBlancoIconografia.webp" sizes="(max-width: 4500px) 100vw, 4500px" class="logo"></a>
+  <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" data-w-id="06ab6c64-468c-b44e-1b8c-856deb96ba7f" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
+    <a href="index.html" class="logo-link-wrapper w-nav-brand"><img width="Auto" height="Auto" alt="" src="images/logoBlancoIconografia.webp" loading="eager" class="logo"></a>
     <div class="nav-container w-container">
-      <!-- Selector de idioma (lógica en js/idioma.js)
-      <div class="lang-switch" role="group" aria-label="Idioma / Language">
-        <button type="button" class="lang-option" data-lang="es" aria-pressed="true">ES</button>
-        <span class="lang-divider" aria-hidden="true">/</span>
-        <button type="button" class="lang-option" data-lang="en" aria-pressed="false">EN</button>
-      </div>-->
+      <nav role="navigation" class="nav-menu w-nav-menu">
+        <div class="nav-link-wrapper">
+          <a href="index.html" class="nav-link w-nav-link">INICIO</a>
+          <a href="index.html" class="nav-link move-down hide-on-tab w-nav-link">Home</a>
+        </div>
+        <div class="nav-link-wrapper">
+          <a href="servicios.html" aria-current="page" class="nav-link w-nav-link w--current"> servicios</a>
+          <a href="servicios.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current">Services</a>
+        </div>
+        <div class="nav-link-wrapper">
+          <a href="portafolio.html" class="nav-link w-nav-link">PORTAFOLIO</a>
+          <a href="portafolio.html" class="nav-link move-down hide-on-tab w-nav-link">Portfolio</a>
+        </div>
+        <div class="nav-link-wrapper">
+          <a href="contact.html" class="nav-link w-nav-link" style="color: #0e5e89;">ContactO</a>
+          <a href="contact.html" class="nav-link move-down hide-on-tab w-nav-link" style="color: #0e5e89;">Contact</a>
+        </div>
+        <div class="nav-link-wrapper">
+          <a href="about.html" class="nav-link w-nav-link"> NOSOTROS</a>
+          <a href="about.html" class="nav-link move-down hide-on-tab w-nav-link">About Us</a>
+        </div>
+      </nav>
+      <div class="menu-button w-nav-button">
+        <div class="burger-icon w-icon-nav-menu" style="color: #0e5e89;"></div>
+      </div>
     </div>
   </div>
   <section class="section">
     <div class="w-layout-blockcontainer container w-container">
       <div class="space-page-top"></div>
       <div class="title-flex">
-        <h1 data-w-id="2b428689-5a35-99ff-f397-e68c91393ae6" style="opacity:0" data-i18n="hero.title">Contacto</h1>
+        <h1 data-w-id="2b428689-5a35-99ff-f397-e68c91393ae6" style="opacity:0; color: #0e5e89;" data-i18n="hero.title">Contacto</h1>
         <h5 data-w-id="2b428689-5a35-99ff-f397-e68c91393ae8" style="opacity:0" class="max-width-20rem"
           data-i18n="hero.subtitle">Escríbenos.</h5>
       </div>

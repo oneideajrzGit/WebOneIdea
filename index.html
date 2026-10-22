@@ -78,13 +78,10 @@
 
     /* caja del mismo tamaño para cada logo */
     .oi-logo {
-      flex: 0 0 220px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 220px !important;
-      height: 130px !important;
-      margin: 0 2rem !important;
+      flex: 0 0 320px !important;
+      width: 320px !important;
+      height: 190px !important;
+      margin: 0 2.5rem !important;
     }
 
     /* los logos son negros: se pasan a gris claro para verse sobre el fondo oscuro */
@@ -126,23 +123,15 @@
       }
 
       .oi-logo {
-        flex-basis: 150px !important;
-        width: 150px !important;
-        height: 90px !important;
+        flex-basis: 210px !important;
+        width: 210px !important;
+        height: 125px !important;
         margin: 0 1.25rem !important;
       }
 
       .oi-marquee-track {
         animation-duration: 22s;
       }
-
-      /* Color de las líneas del ícono hamburguesa */
-      .burger-icon,
-      .menu-button.w--open .burger-icon {
-        color: #000004 !important;
-        /* Cambia esto al color que prefieras para que sea visible */
-      }
-
 
       /* ==========================================================
      2. MENÚ HAMBURGUESA DESPLEGADO Y SUS ENLACES (Móviles / Tablets)
@@ -152,18 +141,6 @@
         /* Cambiar el fondo del menú desplegado al color solicitado */
         .nav-menu {
           background-color: #fbfdf8 !important;
-        }
-
-        /* Como el fondo ahora es claro (#fbfdf8), los enlaces de texto 
-       deben ser oscuros para que se puedan leer perfectamente */
-        .nav-menu .nav-link {
-          color: #000004 !important;
-        }
-
-        /* Color de los enlaces al pasar el cursor (hover) o cuando estén activos */
-        .nav-menu .nav-link:hover,
-        .nav-menu .nav-link.w--current {
-          color: #555555 !important;
         }
       }
     }
@@ -186,8 +163,10 @@
       <!-- cada enlace va duplicado: el segundo es el texto que sube en la animación hover -->
       <nav role="navigation" class="nav-menu w-nav-menu">
         <div class="nav-link-wrapper">
-          <a href="index.html" aria-current="page" class="nav-link w-nav-link w--current">INICIO</a>
-          <a href="index.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current" style="color: #e2a71b;">Home</a>
+          <a href="index.html" aria-current="page" class="nav-link w-nav-link w--current"
+            style="color: #a0094d;">INICIO</a>
+          <a href="index.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current"
+            style="color: #a0094d;">Home</a>
         </div>
         <div class="nav-link-wrapper">
           <a href="servicios.html" class="nav-link w-nav-link">Servicios</a>
@@ -221,7 +200,7 @@
     <div class="w-layout-blockcontainer container w-container">
       <div class="hero-wrapper">
         <h5 class="heading">Bienvenido a</h5>
-        <h1 class="hero-text">One Idea</h1>
+        <h1 class="hero-text" style="color: #a0094d;">One Idea</h1>
         <a href="#brands" class="arrow-border-wrapper w-inline-block">
           <div class="icon-wrapper" data-w-id="022bdf7a-1da5-487f-e90a-10a13619b2dd">
             <img src="images/arrow_out.svg" alt="Bajar" class="arrow">
@@ -336,8 +315,7 @@
               </div>
               <div class="services-text-block">
                 <p class="self-align-left">Fortalece tu identidad corporativa, tu marca personal o haz inolvidable ese
-                  día
-                  único.</p>
+                  día único.</p>
               </div>
             </div>
           </a>
@@ -351,7 +329,8 @@
                 <h4 class="caps">Instalación</h4>
               </div>
               <div class="services-text-block">
-                <p class="self-align-left">¿No tienes equipo para instalar? Nosotros nos encargamos de todo. Cotiza tu instalación con nosotros.</p>
+                <p class="self-align-left">¿No tienes equipo para instalar? Nosotros nos encargamos de todo. Cotiza tu
+                  instalación con nosotros.</p>
               </div>
             </div>
           </a>
@@ -397,13 +376,12 @@
         <div role="list" class="works-wrapper w-dyn-items">
 
           <div role="listitem" class="works-block w-dyn-item" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13b">
-            <a href="#" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
+            <a href="portafolio.html" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
               <div class="works-icon-wrapper" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13d">
                 <h5 class="works-hover">ver trabajo</h5>
               </div>
               <div class="works-image-wrapper">
-                <img src="images/portafolio/san-angel-01.webp"
-                  alt="" class="parallax-image">
+                <img src="images/portafolio/san-angel-01.webp" alt="" class="parallax-image">
                 <div class="parallax-trigger" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e142"></div>
               </div>
             </a>
@@ -420,13 +398,12 @@
             </div>
           </div>
           <div role="listitem" class="works-block w-dyn-item" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13b">
-            <a href="#" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
+            <a href="portafolio.html" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
               <div class="works-icon-wrapper" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13d">
                 <h5 class="works-hover">ver trabajo</h5>
               </div>
               <div class="works-image-wrapper">
-                <img src="images/portafolio/parousa-26.webp"
-                  alt="" class="parallax-image">
+                <img src="images/portafolio/parousa-26.webp" alt="" class="parallax-image">
                 <div class="parallax-trigger" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e142"></div>
               </div>
             </a>
@@ -443,13 +420,12 @@
             </div>
           </div>
           <div role="listitem" class="works-block w-dyn-item" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13b">
-            <a href="#" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
+            <a href="portafolio.html" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
               <div class="works-icon-wrapper" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13d">
                 <h5 class="works-hover">ver trabajo</h5>
               </div>
               <div class="works-image-wrapper">
-                <img src="images/portafolio/panchitos-01.webp"
-                  alt="" class="parallax-image">
+                <img src="images/portafolio/panchitos-01.webp" alt="" class="parallax-image">
                 <div class="parallax-trigger" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e142"></div>
               </div>
             </a>
@@ -466,13 +442,12 @@
             </div>
           </div>
           <div role="listitem" class="works-block w-dyn-item" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13b">
-            <a href="#" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
+            <a href="portafolio.html" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
               <div class="works-icon-wrapper" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13d">
                 <h5 class="works-hover">ver trabajo</h5>
               </div>
               <div class="works-image-wrapper">
-                <img src="images/portafolio/bolsa-taqueria-01.webp"
-                  alt="" class="parallax-image">
+                <img src="images/portafolio/bolsa-taqueria-01.webp" alt="" class="parallax-image">
                 <div class="parallax-trigger" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e142"></div>
               </div>
             </a>
@@ -489,13 +464,12 @@
             </div>
           </div>
           <div role="listitem" class="works-block w-dyn-item" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13b">
-            <a href="#" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
+            <a href="portafolio.html" class="works-link-wrapper w-inline-block" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13c">
               <div class="works-icon-wrapper" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e13d">
                 <h5 class="works-hover">ver trabajo</h5>
               </div>
               <div class="works-image-wrapper">
-                <img src="images/portafolio/el-guayabo-01.webp"
-                  alt="" class="parallax-image">
+                <img src="images/portafolio/el-guayabo-01.webp" alt="" class="parallax-image">
                 <div class="parallax-trigger" data-w-id="cdd86b2f-751d-506f-06f5-7a0831b8e142"></div>
               </div>
             </a>
@@ -704,15 +678,15 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js"></script>
   <div id="google_translate_element" style="display:none"></div>
-<script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: 'es', includedLanguages: 'es,en', autoDisplay: false },
-      'google_translate_element'
-    );
-  }
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'es', includedLanguages: 'es,en', autoDisplay: false },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

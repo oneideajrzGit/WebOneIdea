@@ -21,7 +21,6 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/webflow.css">
   <link rel="stylesheet" href="css/ones-fresh-site.css">
-  <link rel="stylesheet" href="css/portafolio.css">
 
   <!-- Fuente Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +39,8 @@
   <div class="navbar w-nav" role="banner" data-w-id="06ab6c64-468c-b44e-1b8c-856deb96ba7f" data-animation="default"
     data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-no-scroll="1"
     data-doc-height="1">
+
+    <!-- Logo: lleva al inicio -->
     <a href="index.html" class="logo-link-wrapper w-nav-brand">
       <img src="images/logoNegroIconografia.webp" alt="One Idea" class="logo"
         srcset="images/logoNegroIconografia-p-500.webp 500w, images/logoNegroIconografia-p-800.webp 800w, images/logoNegroIconografia-p-1080.webp 1080w, images/logoNegroIconografia-p-1600.webp 1600w, images/logoNegroIconografia.webp 4500w"
@@ -50,29 +51,35 @@
       <!-- cada enlace va duplicado: el segundo es el texto que sube en la animación hover -->
       <nav role="navigation" class="nav-menu w-nav-menu">
         <div class="nav-link-wrapper">
-          <a href="index.html" class="nav-link w-nav-link">INICIO</a>
-          <a href="index.html" class="nav-link move-down hide-on-tab w-nav-link">Home</a>
+          <a href="index.html" aria-current="page" class="nav-link w-nav-link w--current">INICIO</a>
+          <a href="index.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current">Home</a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="servicios.html" class="nav-link w-nav-link">Servicios</a>
-          <a href="servicios.html" class="nav-link move-down hide-on-tab w-nav-link" style="color: #e2a71b;">Services</a>
+          <a href="servicios.html" class="nav-link w-nav-link" style="background: -webkit-radial-gradient(#a0094d, #e2a71b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;">Servicios</a>
+          <a href="servicios.html" class="nav-link move-down hide-on-tab w-nav-link" tyle="background: -webkit-radial-gradient(#a0094d, #e2a71b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;">Services</a>
         </div>
         <div class="nav-link-wrapper">
           <a href="portafolio.html" class="nav-link w-nav-link">PORTAFOLIO</a>
           <a href="portafolio.html" class="nav-link move-down hide-on-tab w-nav-link">Portfolio</a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="contact.html" class="nav-link w-nav-link">CONTACTO</a>
+          <a href="contact.html" class="nav-link w-nav-link">ContactO</a>
           <a href="contact.html" class="nav-link move-down hide-on-tab w-nav-link">Contact</a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="about.html" class="nav-link w-nav-link">NOSOTROS</a>
-          <a href="about.html" class="nav-link move-down hide-on-tab w-nav-link">About</a>
+          <a href="about.html" class="nav-link w-nav-link"> NOSOTROS</a>
+          <a href="about.html" class="nav-link move-down hide-on-tab w-nav-link">About Us</a>
         </div>
       </nav>
 
       <div class="menu-button w-nav-button">
-        <div class="burger-icon w-icon-nav-menu"></div>
+        <div class="burger-icon w-icon-nav-menu" style="background: -webkit-radial-gradient(#a0094d, #e2a71b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;"></div>
       </div>
     </div>
   </div>
@@ -86,8 +93,12 @@
     <div class="w-layout-blockcontainer container w-container">
       <div class="hero-wrapper">
         <h5 class="heading">Soluciones creativas.</h5>
-        <h1 class="service-title">Servicios</h1>
-        <h2 class="service-title outline" lang="en" aria-hidden="true">Services</h2>
+        <h1 class="service-title" style="background: -webkit-radial-gradient(#a0094d, #e2a71b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; font-weight: 700;">Servicios</h1>
+        <h2 class="service-title outline" lang="en" aria-hidden="true" style="background: -webkit-radial-gradient(#a0094d, #e2a71b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;">Services</h2>
         <p class="pf-hero-sub">Volvemos realidad todas tus ideas.</p>
       </div>
       <!-- Degradado de abajo que funde el blanco con el negro de la siguiente sección -->
@@ -126,11 +137,9 @@
                 como los diseñaste. Cuidamos cada archivo antes de imprimirlo para que el resultado final sea nítido,
                 con color parejo y sin sorpresas.</p>
             </div>
-
-            <h5 class="catalog-label">Trabajos previos</h5>
             <div class="work-cards">
               <article class="work-card">
-                <div class="work-card-image"><img src="images/invitaciones.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/TP.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
                   <h6 class="work-card-num">01</h6>
                   <h3 class="work-card-title">Tarjetas de presentación</h3>
@@ -138,15 +147,15 @@
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/post-micro.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/Volantes.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
                   <h6 class="work-card-num">02</h6>
                   <h3 class="work-card-title">Volantes</h3>
-                  <h6 class="work-card-tags">Impresión / Promoción</h6>
+                  <h6 class="work-card-tags">Impresión y corte</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/post-microo-1.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/lona (2).jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
                   <h6 class="work-card-num">03</h6>
                   <h3 class="work-card-title">Lona publicitaria</h3>
@@ -154,75 +163,163 @@
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/invitaciones.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/micro.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">01</h6>
-                  <h3 class="work-card-title">Tarjetas de presentación</h3>
-                  <h6 class="work-card-tags">Impresión / Papel couché</h6>
+                  <h6 class="work-card-num">04</h6>
+                  <h3 class="work-card-title">Microperforado</h3>
+                  <h6 class="work-card-tags">Diseño / Impresión / Instalación</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/post-micro.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/vinil esmerilado.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">02</h6>
-                  <h3 class="work-card-title">Volantes</h3>
-                  <h6 class="work-card-tags">Impresión / Promoción</h6>
+                  <h6 class="work-card-num">05</h6>
+                  <h3 class="work-card-title">Vinil Esmerilado</h3>
+                  <h6 class="work-card-tags">Impresión / Instalación</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/post-microo-1.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/lona.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">03</h6>
+                  <h6 class="work-card-num">06</h6>
                   <h3 class="work-card-title">Lona publicitaria</h3>
-                  <h6 class="work-card-tags">Gran formato / Exterior</h6>
+                  <h6 class="work-card-tags">Gran formato / Instalación</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/invitaciones.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/corte.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">01</h6>
-                  <h3 class="work-card-title">Tarjetas de presentación</h3>
-                  <h6 class="work-card-tags">Impresión / Papel couché</h6>
+                  <h6 class="work-card-num">07</h6>
+                  <h3 class="work-card-title">Vinil de corte</h3>
+                  <h6 class="work-card-tags">Impresión / Instalación</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/post-micro.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/caballete.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">02</h6>
-                  <h3 class="work-card-title">Volantes</h3>
-                  <h6 class="work-card-tags">Impresión / Promoción</h6>
+                  <h6 class="work-card-num">08</h6>
+                  <h3 class="work-card-title">Caballete (vinil sobre coroplast)</h3>
+                  <h6 class="work-card-tags">Impresión / Caballete</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/post-microo-1.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/stickers.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">03</h6>
-                  <h3 class="work-card-title">Lona publicitaria</h3>
-                  <h6 class="work-card-tags">Gran formato / Exterior</h6>
+                  <h6 class="work-card-num">09</h6>
+                  <h3 class="work-card-title">Stickers</h3>
+                  <h6 class="work-card-tags">Impresión / Corte</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/invitaciones.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/lonagranformato.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">01</h6>
-                  <h3 class="work-card-title">Tarjetas de presentación</h3>
-                  <h6 class="work-card-tags">Impresión / Papel couché</h6>
+                  <h6 class="work-card-num">10</h6>
+                  <h3 class="work-card-title">Lona Gran Formato</h3>
+                  <h6 class="work-card-tags">Impresión / Instalación</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/post-micro.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/libro.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">02</h6>
-                  <h3 class="work-card-title">Volantes</h3>
-                  <h6 class="work-card-tags">Impresión / Promoción</h6>
+                  <h6 class="work-card-num">11</h6>
+                  <h3 class="work-card-title">Portadas para libros</h3>
+                  <h6 class="work-card-tags">Impresión / Ensamblaje</h6>
                 </div>
               </article>
               <article class="work-card">
-                <div class="work-card-image"><img src="images/post-microo-1.webp" alt="" loading="lazy"></div>
+                <div class="work-card-image"><img src="images/sitio/boton.jpg" alt="" loading="lazy"></div>
                 <div class="work-card-text">
-                  <h6 class="work-card-num">03</h6>
-                  <h3 class="work-card-title">Lona publicitaria</h3>
-                  <h6 class="work-card-tags">Gran formato / Exterior</h6>
+                  <h6 class="work-card-num">12</h6>
+                  <h3 class="work-card-title">Botones personalizados</h3>
+                  <h6 class="work-card-tags">Impresión / Ensamblaje</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/tazas.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">13</h6>
+                  <h3 class="work-card-title">Tazas y libretas personalizadas</h3>
+                  <h6 class="work-card-tags">Impresión / Ensamblaje</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/dtf.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">14</h6>
+                  <h3 class="work-card-title">Estampado DTF</h3>
+                  <h6 class="work-card-tags">Estampado textil</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/laser.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">15</h6>
+                  <h3 class="work-card-title">Grabado láser</h3>
+                  <h6 class="work-card-tags">Personalización</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/smalto.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">16</h6>
+                  <h3 class="work-card-title">Serigrafía sobre bolsas</h3>
+                  <h6 class="work-card-tags">Personalización</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/playeras.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">17</h6>
+                  <h3 class="work-card-title">Serigrafía sobre playeras polo</h3>
+                  <h6 class="work-card-tags">Estampado textil</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/plumas.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">18</h6>
+                  <h3 class="work-card-title">Grabado láser sobre plumas</h3>
+                  <h6 class="work-card-tags">Personalización</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/coffee.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">19</h6>
+                  <h3 class="work-card-title">Serigrafía sobre vasos</h3>
+                  <h6 class="work-card-tags">Personalización</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/Ana Cecilia  (50 x 70cm) lona.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">20</h6>
+                  <h3 class="work-card-title">Diseño sencillo</h3>
+                  <h6 class="work-card-tags">Diseño Gráfico</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/servicios/grafico.webp" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">21</h6>
+                  <h3 class="work-card-title">Diseño complejo</h3>
+                  <h6 class="work-card-tags">Diseño Gráfico</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/promo.jpg" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">14</h6>
+                  <h3 class="work-card-title">Diseño de post para redes sociales</h3>
+                  <h6 class="work-card-tags">Diseño Digital</h6>
+                </div>
+              </article>
+              <article class="work-card">
+                <div class="work-card-image"><img src="images/sitio/Diseño sin título.mp4" alt="" loading="lazy"></div>
+                <div class="work-card-text">
+                  <h6 class="work-card-num">14</h6>
+                  <h3 class="work-card-title">Diseño de menú digital con QR</h3>
+                  <h6 class="work-card-tags">Diseño Digital</h6>
                 </div>
               </article>
             </div>
