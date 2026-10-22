@@ -38,41 +38,25 @@
 </head>
 
 <body>
-  <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" data-w-id="06ab6c64-468c-b44e-1b8c-856deb96ba7f" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
-    <a href="index.html" class="logo-link-wrapper w-nav-brand"><img width="Auto" height="Auto" alt="" src="images/logoBlancoIconografia.webp" loading="eager" class="logo"></a>
+  <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium"
+    data-w-id="06ab6c64-468c-b44e-1b8c-856deb96ba7f" role="banner" data-no-scroll="1" data-duration="400"
+    data-doc-height="1">
+    <a href="index.html" class="logo-link-wrapper w-nav-brand"><img width="Auto" height="Auto" alt=""
+        src="images/logoBlancoIconografia.webp" sizes="(max-width: 4500px) 100vw, 4500px" class="logo"></a>
     <div class="nav-container w-container">
-      <nav role="navigation" class="nav-menu w-nav-menu">
-        <div class="nav-link-wrapper">
-          <a href="index.html" class="nav-link w-nav-link" style="color: var(--whiteone);">INICIO</a>
-          <a href="index.html" class="nav-link move-down hide-on-tab w-nav-link" style="color: var(--whiteone);">Home</a>
-        </div>
-        <div class="nav-link-wrapper">
-          <a href="about.html" aria-current="page" class="nav-link w-nav-link w--current" style="color: var(--whiteone);"> servicios</a>
-          <a href="about.html" aria-current="page" class="nav-link move-down hide-on-tab w-nav-link w--current" style="color: var(--whiteone);">Services</a>
-        </div>
-        <div class="nav-link-wrapper">
-          <a href="portafolio.html" class="nav-link w-nav-link" style="color: var(--whiteone);">PORTAFOLIO</a>
-          <a href="portafolio.html" class="nav-link move-down hide-on-tab w-nav-link" style="color: var(--whiteone);">Portfolio</a>
-        </div>
-        <div class="nav-link-wrapper">
-          <a href="contact.html" class="nav-link w-nav-link" style="color: #0e5e89;">ContactO</a>
-          <a href="contact.html" class="nav-link move-down hide-on-tab w-nav-link" style="color: #0e5e89;">Contact</a>
-        </div>
-        <div class="nav-link-wrapper">
-          <a href="about.html" class="nav-link w-nav-link" style="color: var(--whiteone);"> NOSOTROS</a>
-          <a href="about.html" class="nav-link move-down hide-on-tab w-nav-link" style="color: var(--whiteone);">About Us</a>
-        </div>
-      </nav>
-      <div class="menu-button w-nav-button">
-        <div class="burger-icon w-icon-nav-menu" style="color: #0e5e89;"></div>
-      </div>
+      <!-- Selector de idioma (lógica en js/idioma.js)
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-option" data-lang="es" aria-pressed="true">ES</button>
+        <span class="lang-divider" aria-hidden="true">/</span>
+        <button type="button" class="lang-option" data-lang="en" aria-pressed="false">EN</button>
+      </div>-->
     </div>
   </div>
   <section class="section">
     <div class="w-layout-blockcontainer container w-container">
       <div class="space-page-top"></div>
       <div class="title-flex">
-        <h1 data-w-id="2b428689-5a35-99ff-f397-e68c91393ae6" style="opacity:0; color: #0e5e89;" data-i18n="hero.title">Contacto</h1>
+        <h1 data-w-id="2b428689-5a35-99ff-f397-e68c91393ae6" style="opacity:0" data-i18n="hero.title">Contacto</h1>
         <h5 data-w-id="2b428689-5a35-99ff-f397-e68c91393ae8" style="opacity:0" class="max-width-20rem"
           data-i18n="hero.subtitle">Escríbenos.</h5>
       </div>
@@ -85,8 +69,14 @@
         <!-- Formulario de contacto. Los "name" (nombre, empresa, email, telefono, producto, mensaje)
              son los que leerá el script PHP (PHPMailer). Los textos visibles se traducen con js/idioma.js;
              los "value" de producto se quedan en español para que el correo llegue igual siempre. -->
-        <form id="email-form" name="email-form" data-name="Email Form" method="post"
+        <form id="email-form" name="email-form" data-name="Email Form" method="post" action="php/enviar.php"
           data-wf-page-id="6a6cdb69a8b3730ea3b1e190" data-wf-element-id="de33c4bd-5db8-0dd9-da14-921ce98adbf8">
+          <!-- Anti-spam (invisible): campo trampa para bots y hora de carga. Lo usa php/enviar.php -->
+          <div style="position:absolute;left:-9999px" aria-hidden="true">
+            <label for="sitio">No llenar</label>
+            <input type="text" name="sitio" id="sitio" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="t" value="">
           <div class="field-wrapper">
             <label for="nombre" class="field-label" data-i18n="form.name">Nombre</label>
             <input class="text-field w-input" maxlength="256" name="nombre" data-name="Nombre"
@@ -353,6 +343,8 @@
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- Envío del formulario a Hostinger (php/enviar.php) -->
+  <script src="js/contacto.js" type="text/javascript"></script>
   <script src="js/idioma.js" type="text/javascript"></script>
 </body>
 
