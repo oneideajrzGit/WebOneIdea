@@ -981,7 +981,7 @@ blockquote {
   }
 
   .nav-menu {
-   /* background-color: var(--whiteone);*/
+    background-color: var(--whiteone);
     flex-direction: column;
     margin-left: 0;
     margin-right: 0;
